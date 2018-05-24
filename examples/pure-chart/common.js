@@ -322,11 +322,12 @@ export const drawXAxisLabels = (sortedData, gap, color = '#000000', showAllXLabe
       {sortedData.map((data, i) => {
         // if (data[3] && i % 2 === 1) {
         if (showAllXLabels || data['x'] && i % 2 === 1) {
+          const left = data['gap'] - gap / 2;
           return (
             <View key={'label' + i} style={{
               position: 'absolute',
               // left: data[0] - gap / 2,
-              left: data['gap'] - gap / 2,
+              left: left + (i === 0 ? 10 : 0),
               width: gap,
               alignItems: 'center'
             }}>
